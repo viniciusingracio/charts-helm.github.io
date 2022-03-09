@@ -1,11 +1,11 @@
-# Default values for besticon.
+# Default values for front.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository: matthiasluedtke/iconserver
+  repository: thecodingmachine/workadventure-front
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
@@ -15,21 +15,30 @@ nameOverride: ""
 fullnameOverride: ""
 
 env:
-  ADDRESS: 0.0.0.0
-  CACHE_SIZE_MB: 32
-  CORS_ENABLED: false
-  CORS_ALLOWED_HEADERS:
-  CORS_ALLOWED_METHODS:
-  CORS_ALLOWED_ORIGINS:
-  CORS_ALLOW_CREDENTIALS:
-  CORS_DEBUG: true
-  HOST_ONLY_DOMAINS: "*"
-  HTTP_CLIENT_TIMEOUT: 5s
-  HTTP_MAX_AGE_DURATION: 720h
-  HTTP_USER_AGENT:
-  POPULAR_SITES: bing.com,github.com,instagram.com,reddit.com
-  PORT: 8080
-  SERVER_MODE: redirect
+  ADMIN_URL:
+  CONTACT_URL:
+  DEBUG_MODE:
+  DISABLE_ANONYMOUS: false
+  DISABLE_NOTIFICATIONS:
+  DISPLAY_TERMS_OF_USE:
+  FALLBACK_LOCALE:
+  ICON_URL: "https://icon.workadventure.local"
+  JITSI_PRIVATE_MODE:
+  JITSI_URL:
+  MAX_PER_GROUP:
+  MAX_USERNAME_LENGTH:
+  OPID_LOGIN_SCREEN_PROVIDER:
+  POSTHOG_API_KEY:
+  POSTHOG_URL:
+  PROFILE_URL:
+  PUSHER_URL: "https://pusher.workadventure.local"
+  SKIP_RENDER_OPTIMIZATIONS:
+  START_ROOM_URL:
+  STUN_SERVER:
+  TURN_PASSWORD:
+  TURN_SERVER:
+  TURN_USER:
+  UPLOADER_URL:
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -56,7 +65,6 @@ securityContext: {}
 service:
   type: ClusterIP
   port: 80
-  portName: http
 
 ingress:
   enabled: true
@@ -65,14 +73,14 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: icon.workadventure.local
+    - host: play.workadventure.local
       paths:
         - path: /
           pathType: ImplementationSpecific
   tls:
-    - secretName: besticon-tls
+    - secretName: front-tls
       hosts:
-        - icon.workadventure.local
+        - play.workadventure.local
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -98,27 +106,3 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
-prometheus:
-  monitor:
-    enabled: true
-    additionalLabels: {}
-
-    jobLabel: ""
-
-    scheme: http
-    bearerTokenFile:
-    tlsConfig: {}
-
-    ## proxyUrl: URL of a proxy that should be used for scraping.
-    ##
-    proxyUrl: ""
-
-    ## Override serviceMonitor selector
-    ##
-    selectorOverride: {}
-
-    relabelings: []
-    metricRelabelings: []
-    interval: ""
-    scrapeTimeout: 10s
