@@ -1,1 +1,1 @@
-# helm-workadventure
+# helm-charts
