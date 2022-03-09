@@ -23,16 +23,16 @@ version: 0.1.1
 # It is recommended to use it with quotes.
 appVersion: "v1.8.4"
 
-dependencies:
-  - name: front
-    version: 0.1.0
-    repository: ..
-  - name: back
-    version: 0.1.0
-    repository: ..
-  - name: pusher
-    version: 0.1.0
-    repository: ..
-  - name: icon
-    version: 0.1.0
-    repository: ..
+# dependencies:
+#   - name: front
+#     version: 0.1.0
+#     repository: https://fcecagno.github.io/helm-charts
+#   - name: back
+#     version: 0.1.0
+#     repository: https://fcecagno.github.io/helm-charts
+#   - name: pusher
+#     version: 0.1.0
+#     repository: https://fcecagno.github.io/helm-charts
+#   - name: icon
+#     version: 0.1.0
+#     repository: https://fcecagno.github.io/helm-charts
