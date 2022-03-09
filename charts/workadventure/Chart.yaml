@@ -33,6 +33,6 @@ dependencies:
   - name: pusher
     version: 0.1.0
     repository: https://fcecagno.github.io/helm-charts
-  - name: icon
+  - name: besticon
     version: 0.1.0
     repository: https://fcecagno.github.io/helm-charts
