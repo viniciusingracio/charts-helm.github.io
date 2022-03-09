@@ -26,14 +26,13 @@ appVersion: "v1.8.4"
 dependencies:
   - name: front
     version: 0.1.0
-    repository: https://fcecagno.github.io/helm-charts
+    repository: ..
   - name: back
     version: 0.1.0
-    repository: https://fcecagno.github.io/helm-charts
+    repository: ..
   - name: pusher
     version: 0.1.0
-    repository: https://fcecagno.github.io/helm-charts
+    repository: ..
   - name: icon
     version: 0.1.0
-    repository: https://fcecagno.github.io/helm-charts
-
+    repository: ..
